@@ -2,7 +2,7 @@ const data = {
   genres: [
     // YOUR original genres
     { title: "Action", slug: "action", img: "https://images.unsplash.com/photo-1579546929518-9e396f3cc809?auto=format&fit=crop&w=1200&q=80" },
-    { title: "Drama", slug: "drama", img: "https://images.unsplash.com/photo-1508609349937-5ec4ae374ebf?auto=format&fit=crop&w=1200&q=80" },
+    { title: "Drama", slug: "drama", img: "https://images.unsplash.com/photo-1611673982064-7385a5d9574e?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" },
     { title: "Sci-Fi", slug: "scifi", img: "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=80" },
     { title: "Animation", slug: "animation", img: "https://images.unsplash.com/photo-1496307042754-b4aa456c4a2d?auto=format&fit=crop&w=1200&q=80" }
   ],
@@ -18,13 +18,13 @@ const data = {
       // MY added movies
       {
         title: "Fury Road Reckoning",
-        img: "https://images.unsplash.com/photo-1533425792633-f0e598a6b70b?auto=format&fit=crop&w=800&q=80",
+        img: "https://images.unsplash.com/photo-1622826520480-7b66162e1410?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
         desc: "In a dystopic wasteland, a lone driver leads a convoy against a tyrannical ruler. Explosions, vehicular warfare, and relentless pursuit define this adrenaline-fueled saga.",
         platforms: ["Netflix", "Prime Video"]
       },
       {
         title: "Shadow Strike",
-        img: "https://images.unsplash.com/photo-1514140847348-2a0e5be6379e?auto=format&fit=crop&w=800&q=80",
+        img: "https://images.unsplash.com/photo-1683025945600-c3dff699bbb8?q=80&w=1033&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
         desc: "An elite agent surfaces from the shadows to dismantle an international crime syndicate. The line between friend and foe blurs with high-stakes espionage.",
         platforms: ["Hulu", "Disney+"]
       }
@@ -104,7 +104,7 @@ const data = {
       // NEW added movies
       {
         title: "Starlight Guardians",
-        img: "https://images.unsplash.com/photo-1504198458649-3128b932f49b?auto=format&fit=crop&w=800&q=80",
+        img: "https://images.unsplash.com/photo-1511201632232-3e4a6e76a142?q=80&w=745&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
         desc: "A group of cosmic creatures protect the galaxy’s fading stars. When darkness encroaches, they unite with Earth’s youth to restore celestial balance.",
         platforms: ["Disney+"]
       },
