@@ -140,7 +140,7 @@ const data = {
     {
       title: "Blockbuster Movies to Watch in Late 2025",
       date: "September 2025",
-      img: "https://images.unsplash.com/photo-1542204165-8e9f195b638b?auto=format&fit=crop&w=1200&q=80",
+      img: "https://plus.unsplash.com/premium_photo-1661762437859-c41fa943637c?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       excerpt: "From high-stakes sequels to fresh original stories, the latter half of 2025 promises cinematic magic. Here’s what to look forward to this season."
     },
     {
@@ -168,13 +168,13 @@ const data = {
     {
       name: "Arcadia Cinemas",
       location: "Los Angeles, USA",
-      img: "https://images.unsplash.com/photo-1490835556834-9e6b1173ae71?auto=format&fit=crop&w=1200&q=80",
+      img: "https://images.unsplash.com/photo-1513015579021-66c7c008af85?q=80&w=1074&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       fact: "Arcadia is a landmark independent theatre known for hosting international film festivals and retrospectives each year."
     },
     {
       name: "Lumière Palace",
       location: "Paris, France",
-      img: "https://images.unsplash.com/photo-1494475673543-6f0e01ea8d7f?auto=format&fit=crop&w=1200&q=80",
+      img: "https://images.unsplash.com/photo-1638096879286-a8664ab3ed7f?q=80&w=737&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       fact: "Named after the Lumière brothers, this historic cinema screens classic and art-house films, preserving Paris’s film heritage."
     }
   ]
