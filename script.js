@@ -1,5 +1,6 @@
 const data = {
   genres: [
+    // YOUR original genres
     { title: "Action", slug: "action", img: "https://images.unsplash.com/photo-1579546929518-9e396f3cc809?auto=format&fit=crop&w=1200&q=80" },
     { title: "Drama", slug: "drama", img: "https://images.unsplash.com/photo-1508609349937-5ec4ae374ebf?auto=format&fit=crop&w=1200&q=80" },
     { title: "Sci-Fi", slug: "scifi", img: "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=80" },
@@ -7,14 +8,29 @@ const data = {
   ],
   movies: {
     action: [
+      // YOUR original movie
       {
         title: "Edge of Vengeance",
         img: "https://images.unsplash.com/photo-1605296867304-46d5465a13f1?auto=format&fit=crop&w=800&q=80",
         desc: "A rogue ex-agent is forced back into action when a global conspiracy threatens to ignite chaos across continents. Explosions, betrayals, and intense stunts keep the audience on edge. Every scene builds toward an epic face-off that will determine the fate of millions.",
         platforms: ["Netflix", "HBO Max"]
+      },
+      // MY added movies
+      {
+        title: "Fury Road Reckoning",
+        img: "https://images.unsplash.com/photo-1533425792633-f0e598a6b70b?auto=format&fit=crop&w=800&q=80",
+        desc: "In a dystopic wasteland, a lone driver leads a convoy against a tyrannical ruler. Explosions, vehicular warfare, and relentless pursuit define this adrenaline-fueled saga.",
+        platforms: ["Netflix", "Prime Video"]
+      },
+      {
+        title: "Shadow Strike",
+        img: "https://images.unsplash.com/photo-1514140847348-2a0e5be6379e?auto=format&fit=crop&w=800&q=80",
+        desc: "An elite agent surfaces from the shadows to dismantle an international crime syndicate. The line between friend and foe blurs with high-stakes espionage.",
+        platforms: ["Hulu", "Disney+"]
       }
     ],
     comedy: [
+      // YOUR original movies
       {
         title: "Laugh Riot",
         img: "https://images.unsplash.com/photo-1522120694231-99759ffa5cc8?auto=format&fit=crop&w=800&q=80",
@@ -34,15 +50,45 @@ const data = {
         platforms: ["Prime Video"]
       }
     ],
+    drama: [
+      // NEW added movies
+      {
+        title: "Silent Echoes",
+        img: "https://images.unsplash.com/photo-1527090494-4e7079efee39?auto=format&fit=crop&w=800&q=80",
+        desc: "After a tragic loss, a mother reconnects with her estranged daughter over shared memories and unrevealed secrets. The film explores grief, forgiveness, and hope.",
+        platforms: ["HBO Max"]
+      },
+      {
+        title: "Whispered Truths",
+        img: "https://images.unsplash.com/photo-1517836357463-d25dfeac3438?auto=format&fit=crop&w=800&q=80",
+        desc: "A journalist uncovers a hidden scandal within a powerful family — but becomes entangled in its dangerous webs. Each revelation threatens her safety and conscience.",
+        platforms: ["Netflix"]
+      }
+    ],
     scifi: [
+      // YOUR original movie
       {
         title: "Starlight Odyssey",
         img: "https://images.unsplash.com/photo-1465101162946-4377e57745c3?auto=format&fit=crop&w=800&q=80",
         desc: "A group of astronauts embarks on a mission to explore an uncharted galaxy. Along the way, they uncover civilizations and mysteries that challenge their understanding of life itself. The breathtaking visuals and thrilling storyline make it a sci-fi masterpiece.",
         platforms: ["Disney+"]
+      },
+      // NEW added movies
+      {
+        title: "Quantum Rifts",
+        img: "https://images.unsplash.com/photo-1519608487953-e999c86e7455?auto=format&fit=crop&w=800&q=80",
+        desc: "After a failed experiment fractures reality, scientists must chase parallel universes to restore balance. Alien threats and mind-bending paradoxes await.",
+        platforms: ["Disney+", "Prime Video"]
+      },
+      {
+        title: "Neon Horizon",
+        img: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=800&q=80",
+        desc: "In a neon-lit metropolis where AI governs humanity, one hacker fights to break free. When secrets emerge, the line between man and machine dissolves.",
+        platforms: ["Hulu"]
       }
     ],
     animation: [
+      // YOUR original movies
       {
         title: "Color Splash",
         img: "https://images.unsplash.com/photo-1489365091240-6a18fc761ec2?auto=format&fit=crop&w=800&q=80",
@@ -54,10 +100,24 @@ const data = {
         img: "https://images.unsplash.com/photo-1517486808906-6ca8b3f04846?auto=format&fit=crop&w=800&q=80",
         desc: "In a city where dreams manifest as living beings, two kids set out to rescue their lost imagination. Filled with humor, adventure, and wonder, the story inspires audiences of all ages. The animation style blends classic and modern techniques beautifully.",
         platforms: ["HBO Max"]
+      },
+      // NEW added movies
+      {
+        title: "Starlight Guardians",
+        img: "https://images.unsplash.com/photo-1504198458649-3128b932f49b?auto=format&fit=crop&w=800&q=80",
+        desc: "A group of cosmic creatures protect the galaxy’s fading stars. When darkness encroaches, they unite with Earth’s youth to restore celestial balance.",
+        platforms: ["Disney+"]
+      },
+      {
+        title: "Echo & Ember",
+        img: "https://images.unsplash.com/photo-1493558103817-58b2924bce98?auto=format&fit=crop&w=800&q=80",
+        desc: "In a whimsical realm where music breathes life, two siblings chase a lost melody to save their homeland from silence. Adventure meets song.",
+        platforms: ["HBO Max"]
       }
     ]
   },
   news: [
+    // YOUR original news
     {
       title: "Upcoming Marvel Movies in 2025",
       date: "March 2025",
@@ -75,17 +135,51 @@ const data = {
       date: "April 2025",
       img: "https://images.unsplash.com/photo-1517602302552-471fe67acf66?auto=format&fit=crop&w=1200&q=80",
       excerpt: "Audiences are flocking back to theaters with an exciting mix of blockbusters. From sci-fi spectacles to heartfelt dramas, the box office is buzzing again. This week proves that movie magic is alive and thriving."
+    },
+    // NEW added news
+    {
+      title: "Blockbuster Movies to Watch in Late 2025",
+      date: "September 2025",
+      img: "https://images.unsplash.com/photo-1542204165-8e9f195b638b?auto=format&fit=crop&w=1200&q=80",
+      excerpt: "From high-stakes sequels to fresh original stories, the latter half of 2025 promises cinematic magic. Here’s what to look forward to this season."
+    },
+    {
+      title: "Inside the Cannes Film Festival 2025",
+      date: "May 2025",
+      img: "https://images.unsplash.com/photo-1556745753-b2904692b3cd?auto=format&fit=crop&w=1200&q=80",
+      excerpt: "This year’s Cannes featured bold new voices, political statements, and boundary-pushing narratives. The jury’s pick stunned critics worldwide."
+    },
+    {
+      title: "Streaming Trends That Are Changing Hollywood",
+      date: "July 2025",
+      img: "https://images.unsplash.com/photo-1492724441997-5dc865305da7?auto=format&fit=crop&w=1200&q=80",
+      excerpt: "From interactive films to AI-assisted editing, streaming platforms are reshaping how stories are told. These innovations may define the next decade."
     }
   ],
   cinemas: [
+    // YOUR original cinema
     {
       name: "Toho Cinemas",
       location: "Tokyo, Japan",
       img: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80",
       fact: "One of Japan’s premier cinema chains, Toho is famous for screening both blockbusters and anime classics. It represents Tokyo’s vibrant film culture."
+    },
+    // NEW added cinemas
+    {
+      name: "Arcadia Cinemas",
+      location: "Los Angeles, USA",
+      img: "https://images.unsplash.com/photo-1490835556834-9e6b1173ae71?auto=format&fit=crop&w=1200&q=80",
+      fact: "Arcadia is a landmark independent theatre known for hosting international film festivals and retrospectives each year."
+    },
+    {
+      name: "Lumière Palace",
+      location: "Paris, France",
+      img: "https://images.unsplash.com/photo-1494475673543-6f0e01ea8d7f?auto=format&fit=crop&w=1200&q=80",
+      fact: "Named after the Lumière brothers, this historic cinema screens classic and art-house films, preserving Paris’s film heritage."
     }
   ]
 };
+
 
 
 
