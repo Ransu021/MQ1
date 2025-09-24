@@ -51,4 +51,60 @@ function renderGenres() {
     <div class="genre-card" onclick="navigate('/genre/${g.slug}')">
       <img src="${g.img}" alt="${g.title}">
       <span>${g.title}</span>
-    </div>`).join
+    </div>`).join('');
+}
+
+function renderGenreDetail(slug) {
+  const genre = data.genres.find(g=>g.slug===slug);
+  document.getElementById('genre-title').innerText = genre.title;
+  const movies = data.movies[slug]||[];
+  document.getElementById('movies-grid').innerHTML = movies.map(m=>`
+    <div class="movie">
+      <img src="${m.img}" alt="${m.title}">
+      <h3>${m.title}</h3>
+      <p>${m.desc}</p>
+      <p><strong>Available:</strong> ${m.platforms.join(', ')}</p>
+    </div>`).join('');
+}
+
+function renderNews() {
+  document.getElementById('news-grid').innerHTML = data.news.map(n=>`
+    <div class="post">
+      <img src="${n.img}" alt="${n.title}">
+      <div class="content">
+        <h3>${n.title}</h3>
+        <small>${n.date}</small>
+        <p>${n.excerpt}</p>
+      </div>
+    </div>`).join('');
+}
+
+function renderCinemas() {
+  document.getElementById('cinemas-grid').innerHTML = data.cinemas.map(c=>`
+    <div class="cinema">
+      <img src="${c.img}" alt="${c.name}">
+      <h3>${c.name}</h3>
+      <p>${c.location}</p>
+      <p><em>${c.fact}</em></p>
+    </div>`).join('');
+}
+
+function navigate(path) {
+  document.querySelectorAll('.view').forEach(v=>v.style.display="none");
+  if(path==="/" || path==="#/") { document.getElementById('home').style.display="grid"; }
+  else if(path.startsWith('/genres')) { document.getElementById('genres').style.display="block"; }
+  else if(path.startsWith('/genre/')) { 
+    const slug = path.split('/')[2];
+    document.getElementById('genre-detail').style.display="block";
+    renderGenreDetail(slug);
+  }
+  else if(path.startsWith('/news')) { document.getElementById('news').style.display="block"; }
+  else if(path.startsWith('/cinemas')) { document.getElementById('cinemas').style.display="block"; }
+}
+
+window.addEventListener('hashchange', ()=>navigate(location.hash.slice(1)));
+document.addEventListener('DOMContentLoaded', ()=>{
+  renderGenres(); renderNews(); renderCinemas();
+  document.getElementById('year').innerText=new Date().getFullYear();
+  navigate(location.hash.slice(1)||"/");
+});
