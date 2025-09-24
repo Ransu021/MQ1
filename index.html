@@ -7,105 +7,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;800&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
-  <style>
-    :root{
-      --bg:#07060a;
-      --card:#0f0f14;
-      --accent:#00e6ff;
-      --accent-2:#b72cff;
-      --muted:#9aa0a6;
-      --glass: rgba(255,255,255,0.03);
-      --neon: 0 0 18px rgba(0,230,255,0.09);
-      --transition: 300ms cubic-bezier(.2,.9,.3,1);
-    }
-    *{box-sizing:border-box}
-    html,body{height:100%}
-    body{
-      margin:0;
-      font-family:Montserrat,system-ui,Segoe UI,Roboto,"Helvetica Neue",Arial;
-      background: radial-gradient(1200px 600px at 10% 10%, rgba(183,44,255,0.06), transparent 8%), radial-gradient(1000px 400px at 95% 90%, rgba(0,230,255,0.03), transparent 10%), var(--bg);
-      color:#e6eef8;
-      -webkit-font-smoothing:antialiased;
-      -moz-osx-font-smoothing:grayscale;
-      line-height:1.4;
-    }
-    a{color:inherit}
-
-    /* NAV */
-    .nav{
-      display:flex;align-items:center;justify-content:space-between;padding:18px 28px;position:sticky;top:0;background:linear-gradient(180deg, rgba(10,10,12,0.6), rgba(10,10,12,0.2));backdrop-filter: blur(6px);z-index:40;border-bottom:1px solid rgba(255,255,255,0.03);
-    }
-    .brand{display:flex;gap:14px;align-items:center}
-    .logo{font-family:'Playfair Display', serif;font-weight:700;color:var(--accent-2);font-size:22px;letter-spacing:0.6px;text-shadow:0 0 8px rgba(183,44,255,0.12)}
-    .navlinks{display:flex;gap:14px}
-    .navlinks a{padding:8px 12px;border-radius:8px;transition:var(--transition);font-weight:600;color:var(--muted);text-decoration:none}
-    .navlinks a:hover{color:#fff;background:linear-gradient(90deg, rgba(0,230,255,0.06), rgba(183,44,255,0.04));box-shadow:var(--neon)}
-    .cta{padding:8px 14px;border-radius:12px;background:linear-gradient(90deg,var(--accent),var(--accent-2));color:#021018;font-weight:700;box-shadow:0 6px 22px rgba(0,230,255,0.12);transition:var(--transition)}
-    .cta:hover{transform:translateY(-3px)}
-
-    /* Hero */
-    .hero{padding:56px 6vw 40px;display:grid;grid-template-columns:1fr 440px;gap:28px;align-items:center}
-    .hero .left{max-width:780px}
-    .eyebrow{color:var(--accent);font-weight:700;margin-bottom:12px}
-    h1{font-family:'Playfair Display',serif;font-size:46px;margin:0 0 12px}
-    p.lead{color:var(--muted);margin:0 0 22px;font-size:18px}
-    .hero-actions{display:flex;gap:12px}
-    .btn{padding:12px 16px;border-radius:12px;background:transparent;border:1px solid rgba(255,255,255,0.04);cursor:pointer;font-weight:600;transition:var(--transition);backdrop-filter:blur(4px)}
-    .btn.glow{background:linear-gradient(90deg,var(--accent),var(--accent-2));color:#021018;box-shadow:0 10px 30px rgba(0,230,255,0.12), 0 0 28px rgba(183,44,255,0.06)}
-    .btn:hover{transform:translateY(-4px)}
-
-    .hero .poster{position:relative;height:360px;background-image:linear-gradient(180deg, rgba(0,0,0,0.0), rgba(0,0,0,0.35)), url('https://images.unsplash.com/photo-1542204165-ace3f63b9b20?q=80&w=1600&auto=format&fit=crop&ixlib=rb-4.0.3&s=1');background-size:cover;border-radius:18px;box-shadow:0 30px 80px rgba(0,0,0,0.6);overflow:hidden}
-    .poster::after{content:'';position:absolute;inset:0;background:linear-gradient(120deg, rgba(183,44,255,0.06), rgba(0,230,255,0.02))}
-
-    /* main container */
-    main{padding:28px 6vw 80px}
-    .section{margin:28px 0 48px}
-    .section h2{font-size:22px;margin:0 0 8px}
-    .muted{color:var(--muted);font-size:14px}
-
-    /* genres grid */
-    .genres{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px}
-    .genre-card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));padding:14px;border-radius:14px;overflow:hidden;position:relative;border:1px solid rgba(255,255,255,0.03);transition:transform var(--transition), box-shadow var(--transition)}
-    .genre-card img{width:100%;height:150px;object-fit:cover;border-radius:10px}
-    .genre-card h3{margin:10px 0 6px}
-    .genre-card p{color:var(--muted);font-size:14px}
-    .genre-card:hover{transform:translateY(-8px);box-shadow:0 18px 60px rgba(0,0,0,0.8), 0 0 28px rgba(0,230,255,0.04)}
-
-    /* movies */
-    .movies-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px}
-    .movie{background:var(--card);padding:10px;border-radius:12px;border:1px solid rgba(255,255,255,0.03);overflow:hidden;position:relative}
-    .movie .thumb{height:320px;border-radius:10px;overflow:hidden;background-size:cover;background-position:center;transition:transform var(--transition), box-shadow var(--transition)}
-    .movie:hover .thumb{transform:scale(1.03);box-shadow:0 20px 60px rgba(0,0,0,0.7),0 0 20px rgba(0,230,255,0.04)}
-    .movie h4{margin:10px 0 6px}
-    .movie p{color:var(--muted);font-size:13px;margin:0}
-    .more{position:absolute;right:12px;top:12px;padding:8px 10px;border-radius:10px;background:linear-gradient(90deg, rgba(0,230,255,0.08), rgba(183,44,255,0.06));font-weight:700;cursor:pointer;backdrop-filter:blur(4px)}
-    .platforms{position:absolute;left:12px;right:12px;bottom:12px;padding:10px;border-radius:10px;background:linear-gradient(180deg, rgba(0,0,0,0.5), rgba(0,0,0,0.65));display:flex;gap:8px;align-items:center;justify-content:flex-start;transform:translateY(110%);opacity:0;transition:var(--transition)}
-    .movie:hover .platforms{transform:translateY(0%);opacity:1}
-    .platform{padding:6px 10px;border-radius:8px;background:rgba(255,255,255,0.03);font-weight:700;font-size:12px}
-
-    /* news */
-    .news-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px}
-    .post img{width:100%;height:160px;object-fit:cover;border-radius:10px}
-    .date{color:var(--accent-2);font-weight:700;font-size:12px}
-
-    /* cinemas */
-    .cinema{display:flex;gap:12px;align-items:center;background:var(--glass);padding:12px;border-radius:12px;border:1px solid rgba(255,255,255,0.02)}
-    .cinema img{width:140px;height:90px;object-fit:cover;border-radius:8px}
-    .cinema .meta{font-size:14px}
-
-    /* footer */
-    footer{padding:28px 6vw;background:linear-gradient(180deg, rgba(0,0,0,0.0), rgba(255,255,255,0.02));border-top:1px solid rgba(255,255,255,0.02);margin-top:40px}
-    .social{display:flex;gap:10px}
-    .icon{width:40px;height:40px;border-radius:8px;display:inline-grid;place-items:center;background:linear-gradient(90deg,var(--accent),var(--accent-2));color:#021018;font-weight:800}
-
-    /* responsive */
-    @media (max-width:900px){
-      .hero{grid-template-columns:1fr;gap:18px;padding:36px 6vw}
-      .hero .poster{height:260px}
-      h1{font-size:34px}
-    }
-
-  </style>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <header class="nav">
@@ -123,219 +25,58 @@
   </header>
 
   <main id="app">
-    <!-- Home view -->
+    <!-- Home -->
     <section id="home" class="hero view">
-      <div class="left">
-        <div class="eyebrow">Now Showing • Curated Picks</div>
-        <h1>Welcome to <span style="color:var(--accent)">CineVerse</span><br><small style="font-size:14px;color:var(--muted);font-weight:600">— a neon-lit cinema playground</small></h1>
-        <p class="lead">Dive into genres, read film culture updates, and explore famous cinemas around the world. Hover posters for more info and click through to immerse yourself in curated picks.</p>
-        <div class="hero-actions">
-          <button class="btn glow" onclick="navigate('/genres')">Browse Genres</button>
-          <button class="btn" onclick="navigate('/news')">Latest News</button>
-        </div>
-        <div style="margin-top:22px">
-          <h3 style="margin:0 0 8px">Featured Picks</h3>
-          <div style="display:flex;gap:12px;flex-wrap:wrap">
-            <div style="background:rgba(255,255,255,0.02);padding:8px;border-radius:10px">Midnight Action</div>
-            <div style="background:rgba(255,255,255,0.02);padding:8px;border-radius:10px">Indie Drama</div>
-            <div style="background:rgba(255,255,255,0.02);padding:8px;border-radius:10px">Animated Gems</div>
-          </div>
-        </div>
-      </div>
-      <div class="poster">
-        <!-- decorative hero image -->
+      <div class="poster"></div>
+      <div class="hero-content">
+        <h1>Welcome to CineVerse</h1>
+        <p>Step into a cinematic universe where you can explore movie genres, catch up on the latest news, and discover iconic cinemas around the world.</p>
+        <a href="#/genres" class="btn">Explore Genres</a>
       </div>
     </section>
 
-    <!-- Genres view -->
+    <!-- Genres -->
     <section id="genres" class="view" style="display:none">
       <div class="section">
         <h2>Genres</h2>
-        <p class="muted">Pick a mood — each card links to its genre detail page.</p>
-        <div class="genres" id="genresGrid"></div>
+        <div class="genres" id="genres-grid"></div>
       </div>
     </section>
 
-    <!-- Genre detail template -->
+    <!-- Genre detail -->
     <section id="genre-detail" class="view" style="display:none">
       <div class="section">
-        <button class="btn" onclick="navigate('/genres')">← Back to Genres</button>
-        <h2 id="genreTitle">Genre</h2>
-        <p class="muted" id="genreDesc">Description</p>
-        <div class="movies-grid" id="moviesGrid"></div>
+        <h2 id="genre-title"></h2>
+        <div class="movies-grid" id="movies-grid"></div>
       </div>
     </section>
 
-    <!-- News view -->
+    <!-- News -->
     <section id="news" class="view" style="display:none">
       <div class="section">
-        <h2>News & Articles</h2>
-        <p class="muted">Film industry highlights, awards, and box-office updates.</p>
-        <div class="news-grid" id="newsGrid"></div>
+        <h2>Movie News</h2>
+        <div class="news-grid" id="news-grid"></div>
       </div>
     </section>
 
-    <!-- Cinemas view -->
+    <!-- Cinemas -->
     <section id="cinemas" class="view" style="display:none">
       <div class="section">
         <h2>Famous Cinemas</h2>
-        <p class="muted">Historic and iconic movie palaces worth visiting.</p>
-        <div style="display:flex;flex-direction:column;gap:12px;max-width:980px;margin-top:12px" id="cinemaList"></div>
+        <div id="cinemas-grid"></div>
       </div>
     </section>
-
   </main>
 
   <footer>
-    <div style="display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap">
-      <div>
-        <strong>CineVerse</strong>
-        <div class="muted">© <span id="year"></span> CineVerse — All rights reserved.</div>
-      </div>
-      <div style="display:flex;gap:12px;align-items:center">
-        <div class="social">
-          <div class="icon">f</div>
-          <div class="icon">t</div>
-          <div class="icon">i</div>
-        </div>
-        <div class="muted" style="font-size:13px">Made with ♥ for movie lovers</div>
-      </div>
+    <p>© <span id="year"></span> CineVerse. All Rights Reserved.</p>
+    <div class="social">
+      <a href="#">🌐</a>
+      <a href="#">🐦</a>
+      <a href="#">📺</a>
     </div>
   </footer>
 
-  <script>
-    // App data
-    const data = {
-      genres: [
-        {slug:'action',title:'Action',img:'https://images.unsplash.com/photo-1533158627-3b9d7f72c9a9?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=1',desc:'High-energy films packed with stunts, chases, and thrills.'},
-        {slug:'comedy',title:'Comedy',img:'https://images.unsplash.com/photo-1513542789411-b6a5d4f31634?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=1',desc:'Laughter-driven stories to lighten the mood.'},
-        {slug:'drama',title:'Drama',img:'https://images.unsplash.com/photo-1504384308090-c894fdcc538d?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=1',desc:'Emotionally powerful storytelling and character journeys.'},
-        {slug:'scifi',title:'Sci-Fi',img:'https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=1',desc:'Speculative futures, space, and high-concept ideas.'},
-        {slug:'animation',title:'Animation',img:'https://images.unsplash.com/photo-1524985069026-dd778a71c7b4?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=1',desc:'Visually imaginative films for all ages.'}
-      ],
-      movies: {
-        action:[
-          {title:'Neon Fist',poster:'https://images.unsplash.com/photo-1524985069026-dd778a71c7b4?q=80&w=800&auto=format&fit=crop&ixlib=rb-4.0.3&s=1',desc:'A street-fighter turned vigilante fights a corrupt syndicate.',platforms:['Netflix','Hulu','Prime']},
-          {title:'Midnight Chase',poster:'https://images.unsplash.com/photo-1542204165-ace3f63b9b20?q=80&w=800&auto=format&fit=crop&ixlib=rb-4.0.3&s=1',desc:'A high-octane heist across a neon metropolis.',platforms:['Netflix','Paramount+']},
-          {title:'Steel Horizon',poster:'https://images.unsplash.com/photo-1505685296765-3a2736de412f?q=80&w=800&auto=format&fit=crop&ixlib=rb-4.0.3&s=1',desc:'Military thriller about a deserted island mission.',platforms:['HBO Max','Prime']}
-        ],
-        comedy:[
-          {title:'Laugh Track',poster:'https://images.unsplash.com/photo-1515165562835-c0b9c9b7eecf?q=80&w=800&auto=format&fit=crop&ixlib=rb-4.0.3&s=1',desc:'A failed comedian warms up to life on tour.',platforms:['Netflix','Disney+']},
-          {title:'Roommates',poster:'https://images.unsplash.com/photo-1520975919185-49b4190c4d55?q=80&w=800&auto=format&fit=crop&ixlib=rb-4.0.3&s=1',desc:'A chaotic apartment and even more chaotic friendships.',platforms:['Hulu','Peacock']},
-          {title:'Holiday Mix-Up',poster:'https://images.unsplash.com/photo-1485217988980-11786ced9454?q=80&w=800&auto=format&fit=crop&ixlib=rb-4.0.3&s=1',desc:'A family holiday with everything going hilariously wrong.',platforms:['Disney+','Prime']}
-        ],
-        drama:[
-          {title:'The Quiet Shore',poster:'https://images.unsplash.com/photo-1494526585095-c41746248156?q=80&w=800&auto=format&fit=crop&ixlib=rb-4.0.3&s=1',desc:'A small town grapples with secrets after a storm.',platforms:['HBO Max','Netflix']},
-          {title:'Atonement Road',poster:'https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=800&auto=format&fit=crop&ixlib=rb-4.0.3&s=1',desc:'Two siblings reunite to heal old wounds.',platforms:['Prime','Hulu']},
-          {title:'Paper Skies',poster:'https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?q=80&w=800&auto=format&fit=crop&ixlib=rb-4.0.3&s=1',desc:'A journalist risks everything for the truth.',platforms:['Netflix']}
-        ],
-        scifi:[
-          {title:'Orbit of Echoes',poster:'https://images.unsplash.com/photo-1470115636492-6d2b56f9140b?q=80&w=800&auto=format&fit=crop&ixlib=rb-4.0.3&s=1',desc:'A crew discovers a signal that changes humanity.',platforms:['Paramount+','Hulu']},
-          {title:'Afterlight',poster:'https://images.unsplash.com/photo-1448375240586-882707db888b?q=80&w=800&auto=format&fit=crop&ixlib=rb-4.0.3&s=1',desc:'An AI gains sentience on an orbital station.',platforms:['Netflix','HBO Max']},
-          {title:'Quantum Bloom',poster:'https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=800&auto=format&fit=crop&ixlib=rb-4.0.3&s=1',desc:'Time and memory twist around an experiment gone wrong.',platforms:['Prime']}
-        ],
-        animation:[
-          {title:'Whimsy World',poster:'https://images.unsplash.com/photo-1504674900247-0877df9cc836?q=80&w=800&auto=format&fit=crop&ixlib=rb-4.0.3&s=1',desc:'A child travels through living paintings.',platforms:['Disney+','Netflix']},
-          {title:'Tiny Heroes',poster:'https://images.unsplash.com/photo-1504208434309-cb69f4fe52b0?q=80&w=800&auto=format&fit=crop&ixlib=rb-4.0.3&s=1',desc:'Miniature heroes save the day in a backyard.',platforms:['Netflix']},
-          {title:'Gears & Giggles',poster:'https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?q=80&w=800&auto=format&fit=crop&ixlib=rb-4.0.3&s=1',desc:'A robot learns to laugh and play.',platforms:['Disney+']}
-        ]
-      },
-      news:[
-        {title:'Upcoming Marvel Movies in 2025',date:'2025-03-12',img:'https://images.unsplash.com/photo-1611901041809-90b1d9e0d75d?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=1',excerpt:'A look at confirmed Marvel slate and expected release dates.'},
-        {title:'Oscar Awards Highlights',date:'2025-02-25',img:'https://images.unsplash.com/photo-1517604931442-9e9c6a57f0b6?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=1',excerpt:'Memorable moments and winners from this year\'s ceremony.'},
-        {title:'Box Office Top 5 This Week',date:'2025-09-14',img:'https://images.unsplash.com/photo-1517604931442-9e9c6a57f0b6?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=1',excerpt:'Which films dominated the global box office this week.'}
-      ],
-      cinemas:[
-        {name:'TCL Chinese Theatre',loc:'Hollywood, USA',img:'https://images.unsplash.com/photo-1483729558449-99ef09a8c325?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=1',fact:'Famous for its forecourt of celebrity handprints and historic premieres.'},
-        {name:'Toho Cinemas',loc:'Tokyo, Japan',img:'https://images.unsplash.com/photo-1533236890883-7a0d8be1f8f1?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=1',fact:'Major Japanese chain — home to many anime premieres.'},
-        {name:'Pathé Tuschinski',loc:'Amsterdam, Netherlands',img:'https://images.unsplash.com/photo-1508057198894-247b23fe5ade?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=1',fact:'A 1921 historic palace theater known for its ornate interior.'}
-      ]
-    }
-
-    // Helpers & renderers
-    function el(tag,attrs={},children=''){const e=document.createElement(tag);for(const k in attrs) if(k.startsWith('on')) e.addEventListener(k.slice(2),attrs[k]); else e.setAttribute(k,attrs[k]);if(children) e.innerHTML=children;return e}
-
-    function renderGenres(){
-      const grid=document.getElementById('genresGrid');grid.innerHTML='';
-      data.genres.forEach(g=>{
-        const c=document.createElement('div');c.className='genre-card';
-        c.innerHTML=`<img src="${g.img}" alt="${g.title}"><h3>${g.title}</h3><p>${g.desc}</p>`;
-        c.addEventListener('click',()=>navigate('/genre/'+g.slug));
-        grid.appendChild(c);
-      })
-    }
-
-    function renderGenreDetail(slug){
-      const genre = data.genres.find(g=>g.slug===slug);
-      document.getElementById('genreTitle').innerText = genre.title;
-      document.getElementById('genreDesc').innerText = genre.desc;
-      const grid = document.getElementById('moviesGrid'); grid.innerHTML='';
-      (data.movies[slug]||[]).forEach(m=>{
-        const div=document.createElement('div');div.className='movie';
-        div.innerHTML = `
-          <div class="thumb" style="background-image:url('${m.poster}')"></div>
-          <h4>${m.title}</h4>
-          <p>${m.desc}</p>
-          <div class="more">More</div>
-          <div class="platforms">${m.platforms.map(p=>`<div class="platform">${p}</div>`).join('')}</div>
-        `;
-        grid.appendChild(div);
-      })
-    }
-
-    function renderNews(){
-      const grid=document.getElementById('newsGrid');grid.innerHTML='';
-      data.news.forEach(n=>{
-        const d=document.createElement('article');d.className='post';
-        d.innerHTML=`<img src="${n.img}" alt="${n.title}"><h3>${n.title}</h3><div class="date">${n.date}</div><p class="muted">${n.excerpt}</p>`;
-        grid.appendChild(d);
-      })
-    }
-
-    function renderCinemas(){
-      const list=document.getElementById('cinemaList');list.innerHTML='';
-      data.cinemas.forEach(cn=>{
-        const item=document.createElement('div');item.className='cinema';
-        item.innerHTML=`<img src="${cn.img}" alt="${cn.name}"><div class="meta"><strong>${cn.name}</strong><div class="muted">${cn.loc}</div><div style="margin-top:6px">${cn.fact}</div></div>`;
-        list.appendChild(item);
-      })
-    }
-
-    // Routing (simple hash router)
-    function showView(id){
-      document.querySelectorAll('.view').forEach(v=>v.style.display='none');
-      const el=document.getElementById(id); if(el) el.style.display='block';
-      // highlight nav
-      document.querySelectorAll('#navlinks a').forEach(a=>a.classList.remove('active'));
-      const link = document.querySelector(`#navlinks a[href="#/${id==='home'?''+'' : id}"]`); // not used strictly
-    }
-
-    function navigate(path){
-      location.hash = '#'+path.replace(/^#?/,'');
-    }
-
-    function router(){
-      const hash = location.hash.replace('#','')||'/';
-      // possible routes: / , /genres, /genre/:slug, /news, /cinemas
-      if(hash==='/'||hash===''){
-        showView('home');
-      } else if(hash.startsWith('/genre/')){
-        const slug = hash.split('/')[2]; renderGenreDetail(slug); showView('genre-detail');
-      } else if(hash==='/genres'){
-        renderGenres(); showView('genres');
-      } else if(hash==='/news'){
-        renderNews(); showView('news');
-      } else if(hash==='/cinemas'){
-        renderCinemas(); showView('cinemas');
-      } else {
-        // fallback
-        showView('home');
-      }
-    }
-
-    // init
-    window.addEventListener('hashchange',router);
-    window.addEventListener('load',()=>{document.getElementById('year').innerText=new Date().getFullYear();renderGenres();router();});
-  </script>
+  <script src="script.js"></script>
 </body>
 </html>
